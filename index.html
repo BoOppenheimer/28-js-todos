@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Todos</title>
+ <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Todo App</h1>
+    <div class="input-container">
+      <input type="text" id="taskInput" placeholder="Enter a task">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    // Function to add a new task
+    function addTask() {
+      var taskInput = document.getElementById("taskInput");
+      var taskList = document.getElementById("taskList");
+      var taskText = taskInput.value;
+
+      if (taskText !== "") {
+        var taskItem = document.createElement("li");
+        var taskCheckbox = document.createElement("input");
+        taskCheckbox.type = "checkbox";
+        taskCheckbox.classList.add("checkbox");
+        taskCheckbox.addEventListener("change", function () {
+          if (this.checked) {
+            taskItem.classList.add("completed");
+          } else {
+            taskItem.classList.remove("completed");
+          }
+        });
+
+        var taskLabel = document.createElement("label");
+        taskLabel.textContent = taskText;
+
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", function () {
+          taskList.removeChild(taskItem);
+        });
+
+        taskItem.appendChild(taskCheckbox);
+        taskItem.appendChild(taskLabel);
+        taskItem.appendChild(deleteButton);
+
+        taskList.appendChild(taskItem);
+        taskInput.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
