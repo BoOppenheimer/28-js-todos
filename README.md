@@ -1,9 +1,12 @@
 # Simple JS Todo app!
-![](./img/js-todos-git.png)
 
-simple DOM manipulation, simple todo app in vanilla js and html
+<img src="./img/js-todos-git.png" width="500">
 
--[ ] should add keyboard enter for todo
+### Simple DOM manipulation, simple todo app in vanilla js and html
+
+### todos
+-[ ] add keyboard enter for todo
 -[ ] persist state?
 
+### get started
 just download and run index.html
