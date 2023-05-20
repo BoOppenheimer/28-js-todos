@@ -1,5 +1,5 @@
 # Simple JS Todo app!
-<img src="./img/js-todos-git.png" width="450">
+![](./img/js-todos-git.png)
 
 ### Simple DOM manipulation, simple todo app in vanilla js and html
 ### todos
